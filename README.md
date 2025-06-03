@@ -1,4 +1,4 @@
-1[TugWar](https://github.com/Janatulikzan/TugWarGame/blob/main/tugwar.png)
+![TugWar](https://github.com/Janatulikzan/TugWarGame/blob/main/tugwar.png)
 
 # React + TypeScript + Vite
 
