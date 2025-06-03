@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* Monad Brand Colors */
+  --monad-off-white: #fbfaf9;
+  --monad-purple: #836ef9;
+  --monad-blue: #200052;
+  --monad-berry: #a0055d;
+  --monad-black: #0e100f;
+  --monad-white: #ffffff;
+
+  /* Derived colors for UI */
+  --monad-purple-light: rgba(131, 110, 249, 0.8);
+  --monad-purple-dark: rgba(131, 110, 249, 0.2);
+  --monad-berry-light: rgba(160, 5, 93, 0.8);
+  --monad-berry-dark: rgba(160, 5, 93, 0.2);
+  --monad-blue-light: rgba(32, 0, 82, 0.8);
+  --monad-blue-dark: rgba(32, 0, 82, 0.3);
+
+  /* UI System Colors */
+  --bg-primary: var(--monad-blue);
+  --bg-secondary: var(--monad-black);
+  --bg-tertiary: rgba(32, 0, 82, 0.6);
+  --text-primary: var(--monad-off-white);
+  --text-secondary: var(--monad-white);
+  --text-muted: rgba(251, 250, 249, 0.7);
+  --border-primary: rgba(131, 110, 249, 0.3);
+  --border-secondary: rgba(251, 250, 249, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, var(--monad-blue) 0%, var(--monad-black) 50%, #1a0040 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--monad-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--monad-purple);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--monad-berry);
+}
+
+/* Animations */
+@keyframes rope-shake {
+  0%,
+  100% {
+    transform: translateX(0) translateY(-50%);
+  }
+  25% {
+    transform: translateX(-3px) translateY(-50%);
+  }
+  75% {
+    transform: translateX(3px) translateY(-50%);
+  }
+}
+
+.rope-shake {
+  animation: rope-shake 0.4s ease-in-out;
+}
+
+@keyframes victory-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+.victory-pulse {
+  animation: victory-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes glow-purple {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(131, 110, 249, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(131, 110, 249, 0.6), 0 0 30px rgba(131, 110, 249, 0.4);
+  }
+}
+
+@keyframes glow-berry {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(160, 5, 93, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(160, 5, 93, 0.6), 0 0 30px rgba(160, 5, 93, 0.4);
+  }
+}
+
+.glow-purple {
+  animation: glow-purple 2s ease-in-out infinite;
+}
+
+.glow-berry {
+  animation: glow-berry 2s ease-in-out infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(14, 16, 15, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(251, 250, 249, 0.1);
+}
+
+.glass-dark {
+  background: rgba(32, 0, 82, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(131, 110, 249, 0.2);
+}
+
+/* Button hover effects */
+.btn-primary {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Monad brand gradients */
+.gradient-monad-primary {
+  background: linear-gradient(135deg, var(--monad-purple) 0%, var(--monad-berry) 100%);
+}
+
+.gradient-monad-secondary {
+  background: linear-gradient(135deg, var(--monad-blue) 0%, var(--monad-black) 100%);
+}
+
+.text-gradient-monad {
+  background: linear-gradient(135deg, var(--monad-purple) 0%, var(--monad-berry) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
